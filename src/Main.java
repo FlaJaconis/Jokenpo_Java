@@ -32,17 +32,23 @@ public class Main {
         fimJogada(nome1, nome2, opJogador1, opJogador2);
     }
 
+    //Menu
     static void menu() {
         String nome;
         System.out.printf("\nEscolha:  " +
                 "\nPedra, papel ou tesoura?" +
                 " Opção: ");
     }
+
+    //Método de leitura para a opção Menu
+    //Já trata erros de entrada como variação de caixas alta/baixa e espaços em branco
     static String lerMenu(){
         String opJogador = sc.nextLine().toLowerCase().replaceAll(" ", "");
         return opJogador;
     }
 
+    //Método para validação da opção.
+    //Ele avalia se a entrada está escrita corretemente de acordo com as variáveis de comparação definidas dentro do próprio método
     static boolean validaOpcao(String opJogador) {
         String pe = "pedra", pa = "papel", te = "tesoura";
 
@@ -54,6 +60,7 @@ public class Main {
         }
     }
 
+    // Método que define vitória, empate ou derrota de acordo com as regras tradicionais do Jokenpo
     static void fimJogada(String nome1, String nome2, String opJogador1, String opJogador2) {
 
               if (opJogador1.equals(opJogador2)) {
